@@ -5,7 +5,7 @@ import "os"
 import "time"
 
 func Lock(spath string) (bool, error) {
-	return LockWithTimeout(spath, time.Second * 0)
+	return LockWithTimeout(spath, time.Second*0)
 }
 
 func Unlock(spath string) error {
@@ -26,7 +26,7 @@ func LockWithTimeout(spath string, timeout time.Duration) (bool, error) {
 			}
 			t = time.Now()
 			elapsed := t.Sub(start)
-			if uint64(timeout) != uint64(time.Second * 0) && elapsed > timeout{
+			if uint64(timeout) != uint64(time.Second*0) && elapsed > timeout {
 				return false, errors.New("Lock Timeout")
 			}
 			time.Sleep(time.Microsecond)
@@ -40,4 +40,3 @@ func LockWithTimeout(spath string, timeout time.Duration) (bool, error) {
 	}
 	return true, nil
 }
-

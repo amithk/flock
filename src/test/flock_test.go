@@ -18,4 +18,3 @@ func TestBasicFlockFunctionality(t *testing.T) {
 		t.Errorf("Error %v during Unlock", err)
 	}
 }
-
